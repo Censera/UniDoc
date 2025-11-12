@@ -1,11 +1,11 @@
-let update = document.getElementById('update');
+let render = document.getElementById('render');
 let input, output;
 
 function convert() {
-    input = document.getElementById('field').value;
+    input = document.getElementById('input').value;
     output = marked.parse(input);
 
-    document.getElementById('preview_text').innerHTML = output;
+    document.getElementById('preview').innerHTML = output;
 }
 
-update.onclick = convert;
+render.onclick = convert;
