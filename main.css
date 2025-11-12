@@ -1,0 +1,90 @@
+html, body {
+    margin: 0;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+p {
+    font-size: medium;
+}
+#top_tab {
+    background: aquamarine;
+    flex: 0 0 auto;
+}
+
+.container {
+    flex: 1 1 0;    
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr; 
+    grid-template-areas: "main sidebar";
+}
+#field, #preview {
+    overflow-wrap: anywhere;
+}
+textarea {
+    width: 100%;
+    height: 100%;
+    max-height: 100%;
+    resize: none;
+}
+
+
+/* Preview */
+
+.markdown-output {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background: #fafafa;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+/* Headings */
+.markdown-output h1,
+.markdown-output h2,
+.markdown-output h3 {
+    color: #222;
+    margin-top: 1.2em;
+    margin-bottom: 0.6em;
+}
+
+/* Links */
+.markdown-output a {
+    color: #1e88e5;
+    text-decoration: none;
+}
+
+.markdown-output a:hover {
+    text-decoration: underline;
+}
+
+/* Code */
+.markdown-output code {
+    background: #eee;
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-family: monospace;
+}
+
+/* Blockquotes */
+.markdown-output blockquote {
+    border-left: 4px solid #ddd;
+    padding-left: 12px;
+    color: #666;
+    margin: 10px 0;
+}
+
+/* Lists */
+.markdown-output ul,
+.markdown-output ol {
+    padding-left: 20px;
+}
+
+/* Images */
+.markdown-output img {
+    max-width: 100%;
+    border-radius: 4px;
+}
