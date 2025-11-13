@@ -11,14 +11,21 @@
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="main.css">
-        <script src="src/marked.js"></script>
+
+        <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/3.0.3/jspdf.umd.min.js"></script>
+
     </head>
     <body>
         <!--[if lt IE 7]>
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
         <header>
-            <button id="render" type="button">Preview</button>
+            <nav>
+                <button id="update" type="button">Refresh</button>
+                <button id="export" type="button">Export</button>
+            </nav>
         </header>
         <main class="container">
             <form>
@@ -26,6 +33,6 @@
             </form>
             <div id="preview" class="markdown">Write Something...</div>
         </main>
-        <script src="main.js" async defer></script>
+        <script src="main.js"></script>
     </body>
 </html>

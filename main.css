@@ -5,18 +5,30 @@ html, body {
     flex-direction: column;
     background-color: #333;
 }
+
 header {
+    background: #222;
+    color: #fff;
     position: fixed;
     top: 0;
-    left: 0;
-    right: 0;
     display: flex;
-    align-content: end;
-    padding: 4px 8px;
-    background-color: lch(28.85% 0 296.81 / 0.377);
-    backdrop-filter: blur(4px);
-    z-index: 1000;
+    z-index: 100;
+    width: 100%;
 }
+
+nav {
+    gap: 1rem;
+    justify-content: end;
+    padding: 4px;
+    box-shadow: 0 1px 6px rgba(0,0,0,0.1);
+}
+
+nav
+ a {
+    text-decoration: none;
+    color: #222;
+    font-weight: 500;
+ }
 
 main {
     background: #222;

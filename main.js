@@ -1,6 +1,15 @@
-let render = document.getElementById('render');
+
+// Get Elements
+const update_b = document.getElementById('update');
+const export_b = document.getElementById('export');
+
 let input, output;
 
+// Buttons
+update_b.onclick = convert; // Convert Markdown To HTML
+
+// Markdown
+// Options
 marked.setOptions({
     breaks: true,
     gfm: true,  
@@ -8,7 +17,7 @@ marked.setOptions({
     smartLists: true,
     smartypants: true,
 });
-
+// Syntax
 marked.use({
   extensions: [
     {
@@ -129,11 +138,10 @@ marked.use({
            
   ]
 });
-  
+
+// Markdown Convert
 function convert() {
     input = document.getElementById('input').value;
     output = marked.parse(input);
     document.getElementById('preview').innerHTML = output;
 }
-
-render.onclick = convert;
