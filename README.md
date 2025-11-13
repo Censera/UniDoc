@@ -2,8 +2,8 @@
 
 ## Features
 
-- [X] Preview Markdow
-- [ ] Modify Makedown syntax
+- [X] Preview Markdown
+- [ ] Modify Markdown syntax
 - [ ] Exporting to PDF
 - [ ] Exporting to PPXT
 - [ ] Custom themes
