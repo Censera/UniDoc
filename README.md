@@ -7,6 +7,7 @@
 - [ ] Exporting to PDF
 - [ ] ~~Exporting to PPXT~~
 - [ ] Custom themes
+- [ ] Stylize the UI
 
 ## Documentation
 
