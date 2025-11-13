@@ -25,19 +25,6 @@ marked.use({
       }
     },
     {
-      name: 'stroke',
-      level: 'inline',
-      start(src) { return src.match(/-/)?.index; },
-      tokenizer(src) {
-        const rule = /^-(.+?)-/;
-        const match = rule.exec(src);
-        if (match) return { type: 'stroke', raw: match[0], text: match[1] };
-      },
-      renderer(token) {
-        return `<del>${token.text}</del>`;
-      }
-    },
-    {
       name: 'keyboard',
       level: 'inline',
       start(src) { return src.match(/&/)?.index; },
@@ -92,14 +79,27 @@ marked.use({
       {
         name: 'blue',
         level: 'inline',
-        start(src) { return src.match(/1_\[/)?.index; },
+        start(src) { return src.match(/b_\[/)?.index; },
         tokenizer(src) {
-          const rule = /^1_\[(.+?)\]/;
+          const rule = /^b_\[(.+?)\]/;
           const match = rule.exec(src);
           if (match) return { type: 'blue', raw: match[0], text: match[1] };
         },
         renderer(token) {
-          return `<blue>${token.text}</blue>`;
+          return `<p style="color: #44f">${token.text}</p>`;
+        }
+      },
+      {
+        name: 'green',
+        level: 'inline',
+        start(src) { return src.match(/g_\[/)?.index; },
+        tokenizer(src) {
+          const rule = /^g_\[(.+?)\]/;
+          const match = rule.exec(src);
+          if (match) return { type: 'green', raw: match[0], text: match[1] };
+        },
+        renderer(token) {
+          return `<p style="color: #4f4">${token.text}</p>`;
         }
       },
   ]
