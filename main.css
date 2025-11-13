@@ -5,6 +5,18 @@ html, body {
     flex-direction: column;
     background-color: #333;
 }
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    align-content: end;
+    padding: 4px 8px;
+    background-color: lch(28.85% 0 296.81 / 0.377);
+    backdrop-filter: blur(4px);
+    z-index: 1000;
+}
 
 main {
     background: #222;
@@ -20,6 +32,9 @@ main {
 }
 #input, #preview {
     overflow-wrap: anywhere;
+}
+#preview {
+    overflow-x: scroll;
 }
 textarea {
     width: 100%;
@@ -95,4 +110,17 @@ textarea{
  img {
     max-width: 90%;
     border-radius: 4px;
+}
+.markdown
+ .code_block {
+    background-color: #1e88e5;
+}
+
+.markdown
+ .blue {
+    color: blue;
+}
+.markdown
+ .green {
+    color: green;
 }

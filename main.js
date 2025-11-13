@@ -86,7 +86,7 @@ marked.use({
           if (match) return { type: 'blue', raw: match[0], text: match[1] };
         },
         renderer(token) {
-          return `<p style="color: #44f">${token.text}</p>`;
+          return `<span class="blue">${token.text}</span>`;
         }
       },
       {
@@ -99,9 +99,34 @@ marked.use({
           if (match) return { type: 'green', raw: match[0], text: match[1] };
         },
         renderer(token) {
-          return `<p style="color: #4f4">${token.text}</p>`;
+          return `<span class="green">${token.text}</span>`;
         }
       },
+      {
+        name: 'codeBlockDiv',
+        level: 'block',
+        start(src) { return src.search(/(```|~~~)/); },
+        tokenizer(src) {
+          const rule = /^(?:```|~~~)(\w+)?\n([\s\S]+?)\n(?:```|~~~)/;
+          const match = rule.exec(src);
+          if (!match) return;
+          return {
+            type: 'codeBlockDiv',
+            raw: match[0],
+            lang: match[1],
+            text: match[2]
+          };
+        },
+        renderer(token) {
+          const lang = token.lang ? ` data-lang="${token.lang}"` : '';
+          const escaped = token.text
+            .replace(/&/g, "&amp;")
+            .replace(/</g, "&lt;")
+            .replace(/>/g, "&gt;");
+          return `<div class="code_block"${lang}><pre>${escaped}</pre></div>\n`;
+        }
+      }
+           
   ]
 });
   
