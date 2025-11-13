@@ -10,7 +10,7 @@
 
 ## Documentation
 
-See [cheat sheet guide](/cheatsheet/GUIDE.md) for Markdown syntax
+See [cheat sheet guide](/cheatsheet/GUIDE.md) for the modified Markdown syntax
 
 ## License
 
