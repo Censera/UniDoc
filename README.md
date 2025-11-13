@@ -3,7 +3,7 @@
 ## Features
 
 - [X] Preview Markdown
-- [ ] Modify Markdown syntax
+- [X] Added more features to Markdown
 - [ ] Exporting to PDF
 - [ ] Exporting to PPXT
 - [ ] Custom themes
