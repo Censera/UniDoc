@@ -5,7 +5,7 @@
 - [X] Preview Markdown
 - [X] Added more features to Markdown
 - [ ] Exporting to PDF
-- [ ] Exporting to PPXT
+- [ ] ~~Exporting to PPXT~~
 - [ ] Custom themes
 
 ## Documentation
