@@ -64,24 +64,19 @@ marked.use({
       }
     },
     {
-        name: 'superscript',
+        name: 'supscript',
         level: 'inline',
-        start(src) { return src.indexOf('^'); },
+        start(src) { return src.match(/^/)?.index; },
         tokenizer(src) {
-          const rule = /^\^([^\s]+)(\s|$)/;
+          const rule = /^\^\{(.+?)\}-/;
           const match = rule.exec(src);
-          if (match) {
-            return {
-              type: 'superscript',
-              raw: match[0],
-              text: match[1]
-            };
-          }
+          if (match) return { type: 'supscript', raw: match[0], text: match[1] };
         },
         renderer(token) {
-          return `<sup>${token.text}</sup> `;
+          return `<sup>${token.text}</sup>`;
         }
-      }
+      },
+    
   ]
 });
   
