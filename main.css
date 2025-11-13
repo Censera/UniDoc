@@ -30,6 +30,9 @@ textarea {
     color: #eee;
     border:none;
 }
+textarea{
+    outline: none;
+}
 
 /* Preview */
 
