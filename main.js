@@ -55,7 +55,7 @@ marked.use({
       level: 'inline',
       start(src) { return src.match(/!/)?.index; },
       tokenizer(src) {
-        const rule = /^!(.+?)!-/;
+        const rule = /^#!(.+?)!#-/;
         const match = rule.exec(src);
         if (match) return { type: 'mark', raw: match[0], text: match[1] };
       },
@@ -68,7 +68,7 @@ marked.use({
         level: 'inline',
         start(src) { return src.match(/^/)?.index; },
         tokenizer(src) {
-          const rule = /^\^\{(.+?)\}-/;
+          const rule = /^\^\{(.+?)\}/;
           const match = rule.exec(src);
           if (match) return { type: 'supscript', raw: match[0], text: match[1] };
         },
@@ -76,7 +76,19 @@ marked.use({
           return `<sup>${token.text}</sup>`;
         }
       },
-    
+      {
+        name: 'subscripts',
+        level: 'inline',
+        start(src) { return src.match(/_/)?.index; },
+        tokenizer(src) {
+          const rule = /^_\{(.+?)\}/;
+          const match = rule.exec(src);
+          if (match) return { type: 'subscripts', raw: match[0], text: match[1] };
+        },
+        renderer(token) {
+          return `<sub>${token.text}</sub>`;
+        }
+      },
   ]
 });
   
