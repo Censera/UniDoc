@@ -1,16 +1,17 @@
 :root {
-    --foreground: #E6F2F0;
-    --grey: #505050;
-    --background: #242424;
+    --foreground: #f8f8f2;
+    --highlight: #44475a;
+    --background: #282a36;
 
-    --red:#FA686A;
-    --orange:#FF8352;
-    --yellow:#FECB02;
-    --green:#57C78B;
-    --cyan:#71D6CA;
-    --blue:#4D9DE0;
-    --purple:#7776BC;
-    --pink:#FEC1C9;
+    --red:#ff5555;
+    --orange:#ffb86c;
+    --yellow:#f1fa8c;
+    --green:#50fa7b;
+    --cyan:#8be9fd;
+    --purple:#bd93f9;
+    --pink:#ff79c6;
+    --gray:#6272a4;
+
 }
 
 .hljs {
@@ -18,31 +19,39 @@
     padding: 1em;
     background: var(--background);
     color: var(--foreground);
-    border: 1px solid var(--grey);
+    border: 1px solid var(--highlight);
     border-radius: 8px;
+    overflow: scroll;
+    margin: 25px 0;
+    box-shadow: #11111149 0 10px 5px;
   }
   .hljs-comment,
   .hljs-quote {
-    color: var(--grey);
+    color: var(--gray);
     font-style: italic;
   }
-  .hljs-keyword {
-    color: var(--red);
+  .hljs-keyword, 
+  .hljs-meta {
+    color: var(--pink);
     font-weight: bold;
   }
   .hljs-selector-tag,
-  .hljs-literal,
-  .hljs-name {
-    color: var(--blue);
-  }
-  .hljs-attribute,
-  .hljs-meta {
+  .hljs-literal {
     color: var(--orange);
+  }
+  .hljs-name {
+    color: var(--orange);
+  }
+  .hljs-attribute {
+    color: var(--purple);
   }
   .hljs-number,
-  .hljs-regexp,
+  .hljs-regexp {
+    color: var(--red);
+    font-weight: 600;
+  }
   .hljs-link {
-    color: var(--orange);
+    color: var(--cyan);
   }
   .hljs-string{
     color: var(--green);
@@ -50,11 +59,12 @@
   .hljs-symbol,
   .hljs-bullet,
   .hljs-subst {
-    color: var(--cyan);
+    color: var(--pink);
   }
   .hljs-title,
   .hljs-section {
     color: var(--purple);
+    font-style: italic;
   }
   .hljs-emphasis {
     font-style: italic;
@@ -62,3 +72,13 @@
   .hljs-strong {
     font-weight: bold;
   }
+  .hljs-function{
+    color: var(--cyan);
+    font-weight: bold;
+  }
+.hljs-variable {
+  color:var(--purple);
+}
+.hljs-class{
+  color: var(--red);
+}
