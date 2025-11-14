@@ -7,32 +7,33 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title></title>
+        <title>Unidoc</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="main.css">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/default.min.css">
-
-        <script src="src/marked.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="Markdown/markdown.css">
+        <script src="Markdown/marked.js"></script>
+        <script src="Markdown/highlight.js"></script>
+        
     </head>
     <body>
         <!--[if lt IE 7]>
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
-        <header>
-            <nav>
-                <button id="update" type="button">Refresh</button>
-            </nav>
-        </header>
+        <nav class="menu_bar">    
+            <button id="auto_update" title="Saving on input">Auto Update</button>
+            <span id="manual_update" style="display: none"><button title="Update the output">Update</button> or <kbd>ctrl</kbd> + <kbd>shift</kbd> + <kbd>S</kbd></span>
+        </nav>
         <main class="container">
-            <section id="editor">
-                <form >
-                 <textarea rows="15" cols="80" placeholder="Type your Markdown here..." id="input"></textarea>
-            </form>
+            <section class="input">
+                <div class="text_box">
+                    <textarea id="input_area" placeholder="Type something..."></textarea>
+                </div>
             </section>
-            <section id="preview"   >
-                 <div class="markdown">Write Something...</div>
+            <section class="output">
+                <div classs="output_box" id="output_area">
+                    <p style="color: var(--light-3)">something...</p>
+                </div>
             </section>
         </main>
         <script src="main.js"></script>

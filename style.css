@@ -1,0 +1,129 @@
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Google+Sans+Code:ital,wght@0,300..800;1,300..800&family=Merriweather+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+
+:root {
+    --light: #F3FFFD;
+    --light-1: #E6F2F0;
+    --light-2: #D9E4E2;
+    --light-3: #818786;
+    
+    --dark: #181818;
+    --dark-1: #1d1d1d;
+    --dark-2: #212121;
+    --dark-3: #272828;
+    --dark-4: #292A2A;
+
+    /* Transpaternt */
+    --t-dark-1: #1d1d1d99;
+    --t-dark-4: #292A2A99;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Merriweather Sans", sans-serif;
+    background-color: var(--dark);
+    color: var(--light);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+nav {
+    background-color: var(--t-dark-1);
+    padding: 8px;
+    border-bottom: 1px solid var(--t-dark-4);
+    position: sticky;
+    top: 0;
+    backdrop-filter: blur(8px);
+    display: flex;
+    gap: 8px;
+}
+
+button {
+    background: var(--dark-3);
+    border: 2px solid var(--dark-4);
+    border-radius: 4px;
+    padding: 4px 12px;
+    color: var(--light-2);
+    font-family: 'Courier New', Courier, monospace;
+}
+button:hover, button:active {
+    filter: brightness(1.2);
+}
+
+kbd {
+    background: var(--dark-1);
+    border: 2px solid var(--dark-4);
+    border-bottom: 8px solid var(--dark);
+    border-radius: 8px;
+    padding: 4px 12px;
+}
+
+kbd:hover {
+    background: var(--dark-4);
+    border-color: var(--dark-1);
+    border-bottom-color: var(--dark-1);
+}
+
+#manual_update:disabled {
+    display: none;
+}
+
+.container {
+    flex: 1;
+    display: flex;
+    padding: 20px;
+    gap: 20px;
+}
+
+.input, .output {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    max-width: 50vw;
+}
+
+.text_box {
+    font-family: "Google Sans Code", monospace;
+    background-color: var(--dark);
+    border: 1px solid var(--dark-4);
+    border-radius: 12px;
+    padding: 20px;
+    flex: 1;
+    overflow: auto;
+}
+
+textarea {
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    border: none;
+    color: var(--light-1);
+    font-size: 14px;
+    resize: none;
+    outline: none;
+    line-height: 1.6;
+}
+
+textarea::placeholder {
+    color: var(--light-3);
+}
+
+.output {
+    font-family: "Fira Sans", sans-serif;
+    background-color: var(--dark-2);
+    border: 1px solid var(--dark-4);
+    border-radius: 12px;
+    padding: 20px;
+    flex: 1;
+    overflow: auto;
+    color: var(--light);
+    word-wrap: break-word;
+    word-break: break-word;
+    overflow-wrap: break-word;
+    line-height: 1.6;
+}

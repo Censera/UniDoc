@@ -1,16 +1,36 @@
+input = document.getElementById('input_area');
+output = document.getElementById('output_area');
 
-// Get Elements
-const update_b = document.getElementById('update');
+let toggle_auto_update = true;
 
-// input: Markdown text
-// output: HTML from Mrkdown
-let input, output;
+auto_update_btn = document.getElementById('auto_update');
+manual_update_btn = document.getElementById('manual_update');
 
-// Buttons
-update_b.onclick = convert; // Convert Markdown To HTML
+auto_update_btn.onclick = () => {
+
+    if (!toggle_auto_update) {
+        manual_update_btn.style.display = "none";
+        auto_update_btn.innerHTML = "Auto Update"
+    } else {
+        manual_update_btn.style.display = "";
+        auto_update_btn.innerHTML = "<"
+    }
+
+    toggle_auto_update = !toggle_auto_update;
+};
+
+
+manual_update_btn.onclick = () => {
+    update();
+};
+
+input.oninput = () => {
+    if (toggle_auto_update) {
+        update();
+    }
+};
 
 // Markdown
-// Options
 marked.setOptions({
     breaks: true,
     gfm: true,  
@@ -19,100 +39,8 @@ marked.setOptions({
     smartypants: true,
 });
 
-// Syntax
 marked.use({
-  extensions: [
-    {
-      name: 'underline',
-      level: 'inline',
-      start(src) { return src.match(/=/)?.index; },
-      tokenizer(src) {
-        const rule = /^=(.+?)=/;
-        const match = rule.exec(src);
-        if (match) return { type: 'underline', raw: match[0], text: match[1] };
-      },
-      renderer(token) {
-        return `<u>${token.text}</u>`;
-      }
-    },
-    {
-      name: 'keyboard',
-      level: 'inline',
-      start(src) { return src.match(/&/)?.index; },
-      tokenizer(src) {
-        const rule = /^&(.+?)&/;
-        const match = rule.exec(src);
-        if (match) return { type: 'keyboard', raw: match[0], text: match[1] };
-      },
-      renderer(token) {
-        return `<kbd>${token.text}</kbd>`;
-      }
-    },
-    {
-        name: 'mark',
-        level: 'inline',
-        start(src) { return src.match(/!/)?.index; },
-        tokenizer(src) {
-          const rule = /^!(.+?)!/;
-          const match = rule.exec(src);
-          if (match) return { type: 'mark', raw: match[0], text: match[1] };
-        },
-        renderer(token) {
-          return `<mark>${token.text}</mark>`;
-        }
-    },
-    {
-        name: 'supscript',
-        level: 'inline',
-        start(src) { return src.match(/^/)?.index; },
-        tokenizer(src) {
-          const rule = /^\^\{(.+?)\}/;
-          const match = rule.exec(src);
-          if (match) return { type: 'supscript', raw: match[0], text: match[1] };
-        },
-        renderer(token) {
-          return `<sup>${token.text}</sup>`;
-        }
-      },
-      {
-        name: 'subscripts',
-        level: 'inline',
-        start(src) { return src.match(/_/)?.index; },
-        tokenizer(src) {
-          const rule = /^_\{(.+?)\}/;
-          const match = rule.exec(src);
-          if (match) return { type: 'subscripts', raw: match[0], text: match[1] };
-        },
-        renderer(token) {
-          return `<sub>${token.text}</sub>`;
-        }
-      },
-      {
-        name: 'blue',
-        level: 'inline',
-        start(src) { return src.match(/b_\[/)?.index; },
-        tokenizer(src) {
-          const rule = /^b_\[(.+?)\]/;
-          const match = rule.exec(src);
-          if (match) return { type: 'blue', raw: match[0], text: match[1] };
-        },
-        renderer(token) {
-          return `<span class="blue">${token.text}</span>`;
-        }
-      },
-      {
-        name: 'green',
-        level: 'inline',
-        start(src) { return src.match(/g_\[/)?.index; },
-        tokenizer(src) {
-          const rule = /^g_\[(.+?)\]/;
-          const match = rule.exec(src);
-          if (match) return { type: 'green', raw: match[0], text: match[1] };
-        },
-        renderer(token) {
-          return `<span class="green">${token.text}</span>`;
-        }
-      },
+    extensions: [
       {
         name: 'codeBlockDiv',
         level: 'block',
@@ -129,35 +57,23 @@ marked.use({
           };
         },
         renderer(token) {
-          const lang = token.lang ? ` class="language-${token.lang}"` : '';
+          const langClass = token.lang ? ` class="language-${token.lang}"` : '';
           const escaped = token.text
-              .replace(/&/g, "&amp;")
-              .replace(/</g, "&lt;")
-              .replace(/>/g, "&gt;");
-          return `<pre><code${lang}>${escaped}</code></pre>\n`;
-        }            
+            .replace(/&/g, "&amp;")
+            .replace(/</g, "&lt;")
+            .replace(/>/g, "&gt;");
+          return `<pre><code${langClass}>${escaped}</code></pre>\n`;
+        }                
       }
            
   ]
 });
 
-// Markdown Convert
-function convert() {
-  update_b.innerHTML = "Refreshing...";
+function update() {
+    const html = marked.parse(input.value);
+    output.innerHTML = html;
 
-  input = document.getElementById('input').value;
-
-  output = marked.parse(input);
-
-  const preview = document.getElementsByClassName('markdown');
-  preview.innerHTML = output;
-
-  // Highlight all code blocks
-  preview.querySelectorAll('pre code').forEach((block) => {
-      hljs.highlightElement(block);
-  });
-
-  update_b.innerHTML = "Refresh";
+    output.querySelectorAll("pre code")
+        .forEach(block => hljs.highlightElement(block));
 }
-
-hljs.highlightAll();  
+hljs.highlightAll()
