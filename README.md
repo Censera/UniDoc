@@ -4,9 +4,12 @@
 
 - [X] Preview Markdown
 - [X] Added more features to Markdown
-- [ ] Exporting to PDF
+
+**For now it  is only a markdown editor with no PDF exportation**
+
+- [ ] ~~Exporting to PDF~~
 - [ ] ~~Exporting to PPXT~~
-- [ ] Custom themes
+- [ ] ~~Custom themes~~
 - [ ] Stylize the UI
 
 ## Documentation

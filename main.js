@@ -3,10 +3,13 @@
 const update_b = document.getElementById('update');
 const export_b = document.getElementById('export');
 
+// input: Markdown text
+// output: HTML from Mrkdown
 let input, output;
 
 // Buttons
 update_b.onclick = convert; // Convert Markdown To HTML
+export_b.onclick = exporting; // Export Markdown PDF
 
 // Markdown
 // Options
@@ -17,6 +20,7 @@ marked.setOptions({
     smartLists: true,
     smartypants: true,
 });
+
 // Syntax
 marked.use({
   extensions: [
