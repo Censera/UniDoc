@@ -11,8 +11,10 @@
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="main.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/default.min.css">
 
         <script src="src/marked.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
     </head>
     <body>
         <!--[if lt IE 7]>
@@ -21,14 +23,17 @@
         <header>
             <nav>
                 <button id="update" type="button">Refresh</button>
-                <button id="export" type="button">Export</button>
             </nav>
         </header>
         <main class="container">
-            <form>
-                 <textarea id="input"></textarea>
+            <section id="editor">
+                <form >
+                 <textarea rows="15" cols="80" placeholder="Type your Markdown here..." id="input"></textarea>
             </form>
-            <div id="preview" class="markdown">Write Something...</div>
+            </section>
+            <section id="preview"   >
+                 <div class="markdown">Write Something...</div>
+            </section>
         </main>
         <script src="main.js"></script>
     </body>

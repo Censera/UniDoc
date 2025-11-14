@@ -1,7 +1,6 @@
 
 // Get Elements
 const update_b = document.getElementById('update');
-const export_b = document.getElementById('export');
 
 // input: Markdown text
 // output: HTML from Mrkdown
@@ -9,7 +8,6 @@ let input, output;
 
 // Buttons
 update_b.onclick = convert; // Convert Markdown To HTML
-export_b.onclick = exporting; // Export Markdown PDF
 
 // Markdown
 // Options
@@ -131,13 +129,13 @@ marked.use({
           };
         },
         renderer(token) {
-          const lang = token.lang ? ` data-lang="${token.lang}"` : '';
+          const lang = token.lang ? ` class="language-${token.lang}"` : '';
           const escaped = token.text
-            .replace(/&/g, "&amp;")
-            .replace(/</g, "&lt;")
-            .replace(/>/g, "&gt;");
-          return `<div class="code_block"${lang}><pre>${escaped}</pre></div>\n`;
-        }
+              .replace(/&/g, "&amp;")
+              .replace(/</g, "&lt;")
+              .replace(/>/g, "&gt;");
+          return `<pre><code${lang}>${escaped}</code></pre>\n`;
+        }            
       }
            
   ]
@@ -145,7 +143,21 @@ marked.use({
 
 // Markdown Convert
 function convert() {
-    input = document.getElementById('input').value;
-    output = marked.parse(input);
-    document.getElementById('preview').innerHTML = output;
+  update_b.innerHTML = "Refreshing...";
+
+  input = document.getElementById('input').value;
+
+  output = marked.parse(input);
+
+  const preview = document.getElementsByClassName('markdown');
+  preview.innerHTML = output;
+
+  // Highlight all code blocks
+  preview.querySelectorAll('pre code').forEach((block) => {
+      hljs.highlightElement(block);
+  });
+
+  update_b.innerHTML = "Refresh";
 }
+
+hljs.highlightAll();  

@@ -1,37 +1,52 @@
+:root {
+    /* Color palette */
+    --eerie-black: #181818ff;
+    --eerie-black-2: #1d1d1dff;
+    --eerie-black-3: #212121ff;
+    --jet: #272828ff;
+    --jet-2: #292a2aff;
+    --platinum: #d9e4e2ff;
+    --azure-web: #e6f2f0ff;
+    --azure-web-2: #f3fffdff;
+}
+
 html, body {
     margin: 0;
     height: 100%;
     display: flex;
     flex-direction: column;
-    background-color: #333;
+    background-color: var(--eerie-black);
 }
 
 header {
-    background: #222;
-    color: #fff;
+    background: rgba(29, 29, 29, 0.76);
+    color: var(--text);
     position: fixed;
     top: 0;
     display: flex;
     z-index: 100;
     width: 100%;
+    border-bottom: 1px solid rgba(41, 42, 42, 0.664);
+    backdrop-filter: blur(6px);
 }
 
 nav {
     gap: 1rem;
     justify-content: end;
     padding: 4px;
-    box-shadow: 0 1px 6px rgba(0,0,0,0.1);
 }
 
-nav
- a {
-    text-decoration: none;
-    color: #222;
-    font-weight: 500;
- }
-
+button {
+    background: none;
+    border: none;
+    color: var(--azure-web);
+    font-size: medium;
+}
+button:active {
+    color: var(--platinum);
+}
 main {
-    background: #222;
+    padding-top: 40px ;
     flex: 0 0 auto;
 }
 
@@ -42,35 +57,38 @@ main {
     grid-template-rows: 1fr; 
     grid-template-areas: "main sidebar";
 }
-#input, #preview {
+#input{
     overflow-wrap: anywhere;
 }
-#preview {
-    overflow-x: scroll;
-}
-textarea {
+
+#editor {
     width: 100%;
+    
+}
+
+textarea {
+    font-size: large;
     height: 100%;
     max-height: 100%;
+    width: fit-content;
+    padding: 20px;
+    margin: 20px;
     resize: none;
-    background-color: #111;
-    color: #eee;
-    border:none;
-}
-textarea{
+    background-color: var(--eerie-black);
+    color: var(--azure-web);
+    border: 1px solid var(--eerie-black-3);
     outline: none;
 }
 
 /* Preview */
-
 .markdown
  {
-    font-family: 'Helvetica Neue', Arial, sans-serif;
-    line-height: 1.6;
-    color: #eee;
-    background: #222;
+    color: var(--platinum);
+    background: var(--eerie-black-3);
     padding: 20px;
-    border-left: 2px solid #333;
+    margin: 20px;
+    border: 1px solid var(--jet-2);
+    border-radius: 6px;
 }
 
 .markdown
@@ -79,7 +97,7 @@ textarea{
  h2,
 .markdown
  h3 {
-    color: #ddd;
+    color: var(--azure-web-2);
     margin-top: 1.2em;
     margin-bottom: 0.6em;
 }
