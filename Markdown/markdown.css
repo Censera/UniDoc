@@ -28,6 +28,7 @@
   }
   .hljs-keyword {
     color: var(--red);
+    font-weight: bold;
   }
   .hljs-selector-tag,
   .hljs-literal,
