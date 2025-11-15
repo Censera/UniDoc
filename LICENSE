@@ -4,7 +4,7 @@ Licensed under ToRefine License
 Permission is granted to use, copy, modify, and distribute this software, provided that:
 
 1. All original copyright notices, years, author names, and contributor names appearing in the source files are preserved.
-2. Any redistributed modified version must include a description of the modifications and must constitute a non-trivial change to the software.
+2. Any redistributed modified version must include a MODIFICATIONS file documenting the changes made.
 3. This license text must be included with all copies.
 
 THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND. THE AUTHORS ARE NOT LIABLE FOR ANY DAMAGES ARISING FROM THEIR USE.
