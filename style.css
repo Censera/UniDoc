@@ -1,20 +1,19 @@
-@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@300..700&family=Merriweather+Sans:ital,wght@0,300..800;1,300..800&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@300..700&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
 :root {
     --light: #F3FFFD;
     --light-1: #E6F2F0;
     --light-2: #D9E4E2;
     --light-3: #818786;
     
-    --dark: #181818;
-    --dark-1: #1d1d1d;
-    --dark-2: #212121;
-    --dark-3: #272828;
-    --dark-4: #292A2A;
+    --dark: #272725;
+    --dark-1: #2B2B29;
+    --dark-2: #323230;
+    --dark-3: #393938;
+    --dark-4: #484847;
 
     /* Transpaternt */
-    --t-dark-1: #1d1d1d99;
-    --t-dark-4: #292A2A99;
+    --t-dark-1: #27272580;
+    --t-dark-4: #2B2B2980;
 }
 
 * {
@@ -24,7 +23,7 @@
 }
 
 body {
-    font-family: "Merriweather Sans", sans-serif;
+    font-family: "Open Sans", sans-serif;
     background-color: var(--dark);
     color: var(--light);
     min-height: 100vh;
