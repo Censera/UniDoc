@@ -13,7 +13,7 @@
 
 ## Documentation
 
-Same Markdown syntaxt
+Same [Markdown](reset.md) syntaxt
 
 ## License
 
