@@ -3,7 +3,7 @@
 ## Features
 
 - [X] Preview Markdown
-- [X] Added more features to Markdown
+- [ ] Added more features to Markdown
 
 **For now it is only a markdown editor with no PDF/PPXT exportation**
 
@@ -13,7 +13,7 @@
 
 ## Documentation
 
-See [cheat sheet guide](/cheatsheet/GUIDE.md) for the modified Markdown syntax
+Same Markdown syntaxt
 
 ## License
 

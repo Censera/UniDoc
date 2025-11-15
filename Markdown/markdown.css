@@ -46,13 +46,13 @@
   margin: 0.7em 0;
 }
 .output a {
-  color: var(--blue);
+  color: var(--green);
   text-decoration: none;
 }
 .output a:hover {
   text-decoration: underline;
 }
-.output code {
+.output pre > code {
   font-family: "Fira Code", monospace;
   font-size: 15px;
   background: var(--background);
@@ -60,6 +60,15 @@
   border: 1px solid var(--highlight);
   border-radius: 8px;
   padding: 16px;
+}
+.output code {
+  font-family: "Fira Code", monospace;
+  font-size: 15px;
+  background: var(--background);
+  color: var(--foreground);
+  border: 1px solid var(--highlight);
+  border-radius: 4px;
+  padding: 4px 8px;
 }
 .output blockquote {
   margin: 1em 0;
@@ -76,18 +85,20 @@
 }
 .output table {
   font-size: 16px;
-  border-collapse: collapse;
+  border-collapse:collapse;
   width: 100%;
   padding: 8px;
-  border: 1px solid var(--highlight);
 }
 .output th, td {
-  border: 1px solid var(--highlight);
+  border: 1px solid var(--gray);
   padding: 8px 12px;
   text-align: left;
 } 
 .output th {
   background: var(--background);
+}
+.output td {
+  background: var(--highlight);
 }
 .output img {
   max-width: 100%;

@@ -1,10 +1,25 @@
-input = document.getElementById('input_area');
-output = document.getElementById('output_area');
+let input = document.getElementById('input_area');
+let output = document.getElementById('output_area');
 
 let toggle_auto_update = true;
 
 auto_update_btn = document.getElementById('auto_update');
 manual_update_btn = document.getElementById('manual_update');
+reset_btn = document.getElementById('reset_btn');
+
+reset_btn.onclick = () => {
+  if (confirm("Do want to reset? You may lose you progress.")) {
+    fetch("reset.md")
+      .then(r => r.text())
+      .then(t => {
+        input.value = t;
+      })
+      .then(() => {
+        update();
+      });
+  }
+};
+
 
 auto_update_btn.onclick = () => {
 
