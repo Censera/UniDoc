@@ -20,12 +20,26 @@ reset_btn.onclick = () => {
   }
 };
 
+document.addEventListener("keydown", function(event) {
+  if (event.ctrlKey && event.key === 's') {
+    manual_update_btn.style.opacity = .4;
+
+    event.preventDefault();
+    update();
+
+    setTimeout(
+      () => {manual_update_btn.style.opacity = 1},
+      100
+    )
+  }
+  
+})
 
 auto_update_btn.onclick = () => {
 
     if (!toggle_auto_update) {
         manual_update_btn.style.display = "none";
-        auto_update_btn.innerHTML = "Auto Update"
+        auto_update_btn.innerHTML = "auto-save"
     } else {
         manual_update_btn.style.display = "";
         auto_update_btn.innerHTML = "<"
