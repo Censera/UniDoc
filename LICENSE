@@ -1,12 +1,12 @@
-Copyright (c) 2025 Censera
-Licensed under ToRefine License
+Copyright (c) Censera 2025
+Licensed under ToRefine License, Version 1.0
 
-Permission is granted to use, copy, modify, and distribute this software, provided that:
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the “Software”), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
 
-1. All original copyright notices, years, author names, and contributor names appearing in the source files are preserved.
-2. Any redistributed modified version must include a MODIFICATIONS file documenting the changes made.
-3. This license text must be included with all copies.
+(A) All original copyright notices, years, author names, and contributor names appearing in the source files are preserved.
 
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND. THE AUTHORS ARE NOT LIABLE FOR ANY DAMAGES ARISING FROM THEIR USE.
+(B) Any redistributed modified version must include a file named MODIFICATIONS documenting contributor names, and the changes made.
 
-Modifications by: Censera, 2025
+(C) This license text, copyright notice, and this list of conditions must be included with all copies.
+
+THE SOFTWARE IS PROVIDED “AS IS”, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES, OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF, OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
