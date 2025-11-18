@@ -17,5 +17,5 @@ Same [Markdown](reset.md) syntaxt
 
 ## License
 
-Licensed under ToRefine License, Version 1.0.
+Licensed under ToRefine License, Version 1.0.  
 See https://github.com/Censera/ToRefine-License
