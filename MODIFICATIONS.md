@@ -6,5 +6,5 @@ Censera,
 
 ## Changes made by Censera (2025)
 
-- Created the ToRefine license
+- Created Unidoc
 - Adding a keyboard shortcut for updating
