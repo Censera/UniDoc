@@ -19,3 +19,4 @@ Same [Markdown](reset.md) syntaxt
 
 Licensed under ToRefine License, Version 1.0.  
 See [ToRefine License](https://github.com/Censera/ToRefine-License)
+<p align="end"><img height="20px" src="postpone_github.png"/></p>
